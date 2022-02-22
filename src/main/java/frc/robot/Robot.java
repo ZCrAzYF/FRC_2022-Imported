@@ -30,14 +30,14 @@ public class Robot extends TimedRobot {
   WPI_VictorSPX m_leftFront = new WPI_VictorSPX(16);
   WPI_VictorSPX m_leftRear = new WPI_VictorSPX(5);
   MotorControllerGroup m_LeftGroup = new MotorControllerGroup(m_leftFront, m_leftRear);
-  WPI_VictorSPX m_rightFront = new WPI_VictorSPX(04);
-  WPI_VictorSPX m_rightRear = new WPI_VictorSPX(03);
+  WPI_VictorSPX m_rightFront = new WPI_VictorSPX(17);
+  WPI_VictorSPX m_rightRear = new WPI_VictorSPX(18);
   MotorControllerGroup m_RightGroup = new MotorControllerGroup(m_rightFront, m_rightRear);
-  DifferentialDrive m_drive = new DifferentialDrive(m_RightGroup, m_LeftGroup);
-  WPI_VictorSPX m_intake = new WPI_VictorSPX(0);
+  DifferentialDrive m_drive = new DifferentialDrive(m_LeftGroup, m_RightGroup);
+  //WPI_VictorSPX m_intake = new WPI_VictorSPX(0);
   //set up if using semi-shooter
-  WPI_VictorSPX m_loElevator = new WPI_VictorSPX(0);
-  WPI_VictorSPX m_upElevator = new WPI_VictorSPX(0);
+  //WPI_VictorSPX m_loElevator = new WPI_VictorSPX(0);
+  //WPI_VictorSPX m_upElevator = new WPI_VictorSPX(0);
   private CANSparkMax m_Conveyor;
   private CANSparkMax m_Shooter;
 
@@ -116,7 +116,7 @@ public class Robot extends TimedRobot {
   {
      m_drive.arcadeDrive(m_stick.getX(),m_stick.getY());
 
-     if(m_stick.getRawButtonPressed(3))
+     /*if(m_stick.getRawButtonPressed(3))
      {
         m_Conveyor.set(1);
      }
@@ -127,7 +127,7 @@ public class Robot extends TimedRobot {
      else
      {
        m_Conveyor.set(0);
-     }
+     }*/
 
   }
   @Override
